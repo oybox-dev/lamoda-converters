@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title>Lamoda Converter</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <script>
+
+
+        function convert() {
+            var baseURL = 'https://modato.ru/g/3f2779c2d407f83b93534e8640d77b/?i=5&amp;f_id=13574&amp;ulp='
+            var url = encodeURIComponent(document.getElementById("url_input").value);
+
+            if (!url.includes('.lamoda.ru')) {
+                alert('Wrong URL address');
+            } else {
+                var result = baseURL + url;
+                document.getElementById("result").value = result;
+            }
+        }
+
+        function copy() {
+            var copyText = document.getElementById("result");
+            copyText.select();
+            document.execCommand("copy");
+        }
+    </script>
+
+    <div class="alert alert-primary" role="alert">
+        Lamoda Converter
+    </div>
+
+    <form>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Lamoda Address</label>
+            <input type="text" class="form-control" id="url_input" placeholder="www.lamoda.ru">
+        </div>
+        <button type="button" class="btn btn-primary" onclick="convert()">Convert</button>
+    </form>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1" onclick="copy()">Copy</button>
+        </div>
+        <input type="text" id="result" class="form-control" placeholder="" aria-label="Example text with button addon"
+            aria-describedby="button-addon1">
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
